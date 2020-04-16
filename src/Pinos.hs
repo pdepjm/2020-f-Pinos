@@ -33,31 +33,13 @@ centimetrosArriba altura = max 0 (altura - limite) * 100
 limite :: Int
 limite = 3
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- Punto 2
 -- Definí la función esPesoUtil, recibe un peso en kg y responde si un pino de ese peso le sirve a la fábrica
 -- Los pinos se usan para llevarlos a una fábrica de muebles, a la que le sirven árboles de entre 400 y 1000 kilos, un pino fuera de este rango no le sirve a la fábrica.
 
 -- Punto 3
--- Definí la función sirvePino, recibe la altura de un pino y responde si un pino de ese peso le sirve a la fábrica.
+-- Definí la función sirvePino, 
+--recibe la altura de un pino y responde si un pino de ese peso le sirve a la fábrica.
+
+sirvePino :: Int -> Bool
+sirvePino = esPesoUtil.pesoPino
