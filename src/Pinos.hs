@@ -8,6 +8,30 @@ module Pinos where
 
 -- Recibo altura en metros
 
+pesoPino :: Int -> Int 
+pesoPino altura = pesoAbajo altura + pesoArriba altura
+
+-- otra version (incorrecta)
+--pesoPino altura = ((max altura 3) - 3) * 200 + (min altura 3) * 300
+-- otra version (incorrecta)
+--pesoPino altura = ((min 3 altura) * 3 + (altura - (min 3 altura)) * 2) * 100
+
+-- centimetros de abajo * 3kg
+pesoAbajo :: Int -> Int
+pesoAbajo altura = centimetrosAbajo altura * 3
+
+-- centimetros de arriba * 2kg
+pesoArriba :: Int -> Int
+pesoArriba altura = centimetrosArriba altura * 2
+
+centimetrosAbajo :: Int -> Int
+centimetrosAbajo altura = min limite altura * 100
+
+centimetrosArriba :: Int -> Int
+centimetrosArriba altura = max 0 (altura - limite) * 100
+
+limite :: Int
+limite = 3
 
 
 
@@ -30,9 +54,6 @@ module Pinos where
 
 
 
-
--- pesoPino altura = ((max altura 3) - 3) * 200 + (min altura 3) * 300
-pesoPino altura = ((min 3 altura) * 3 + (altura - (min 3 altura)) * 2) * 100
 
 -- Punto 2
 -- Definí la función esPesoUtil, recibe un peso en kg y responde si un pino de ese peso le sirve a la fábrica
